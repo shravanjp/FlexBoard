@@ -10,7 +10,7 @@ body{
 .option-container{
     position: absolute;
     display: block;
-    top: 2rem;
+    top: 1rem;
     left: 2rem;
     height: 2.5rem;
     width: 2.5rem;
@@ -31,7 +31,7 @@ body{
     width: 22rem;
     background-color: rgb(214, 224, 221);
     justify-content: space-around;
-    top: 2.0rem;
+    top: 1.0rem;
     left: calc( ( 100vw - 20rem ) / 2);
     border-radius: 1rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -45,8 +45,14 @@ body{
 }
 
 .pencil-tool-container{
+
+    background-color: red;
     position: absolute;
-    top:4.7rem;
+    display: flex;
+    display: none;
+
+    flex-direction: column;
+    top:3.6rem;
     left:calc( ( 100vw - 19.8rem ) / 2);
     background-color: rgb(214, 224, 221);
     width: 9rem;
@@ -55,7 +61,7 @@ body{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
 }
-.pencil-width-container {
+ .pencil-width-container {
     display: flex;
     position: relative;
     top: 0.1rem;
@@ -63,17 +69,20 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .pencil-width-container input{
-   width: 85%;
+   width: 90%;
 }
+
 .pencil-color-container{
     display: flex;
-    height: 1.5rem;
+    height: 1.4rem;
     justify-content: center;
     align-items: center;
     gap:1rem;
 
 }
+
 .pencil-color{
     border-radius: 50%;
     height: 1rem;
@@ -90,4 +99,37 @@ body{
 }
 .red{
     background-color: red;
+}
+
+.eraser-tool-container{
+    position: absolute;
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top:3.6rem;
+    left:calc( ( 100vw - 14.5rem ) / 2);
+    background-color: rgb(214, 224, 221);
+    width: 9rem;
+    height: 2.4rem;
+    border-radius: 9px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.erasor-width-container {
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 0, 85);
+    top: 0.1rem;
+    height: 2.3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-tool{
+    display: none;
+}
+.open-tool{
+    display: flex;
 }
