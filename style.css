@@ -38,6 +38,36 @@ body{
 
 }
 
+.scale-tools{
+    animation-name: scale-toolbox;
+    animation-duration: 1s;
+}
+
+/* .shrink-tools{
+    animation-name: shrink-toolbox;
+    animation-duration: 2s;
+} */
+
+
+@keyframes scale-toolbox {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+/* @keyframes shrink-toolbox {
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(0.1);
+    }
+    
+} */
 .toolbox-container > *{
     height: 2rem;
     padding: 0.3rem;
@@ -132,4 +162,54 @@ body{
 }
 .open-tool{
     display: flex;
+}
+
+.sticky-note-container{
+    height: 12rem;
+    width: 14rem;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: absolute;
+    top: 15rem;
+    left: 15rem;
+}
+
+.note-header-container{
+    height: 1.6rem;
+    background-color: #ecf0f1;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.note-header-container > * {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.5rem;
+    border-radius: 80%;
+}
+
+.minimize{
+    background-color: green;
+}
+
+.remove{
+    background-color: red;
+}
+
+.note-area-container{
+    height: calc(100% - 1.5rem);
+    /* background-color:red; */
+}
+
+textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    resize: none;
 }

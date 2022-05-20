@@ -1,18 +1,17 @@
 // "use strict"
 let optionContainer = document.querySelector(".option-container");
 let toolBoxContainer = document.querySelector(".toolbox-container");
+let bodyContainer = document.getElementsByTagName("body")[0];
 let pencil = document.getElementById("pencil");
 let eraser = document.getElementById("eraser");
+let stickynote = document.getElementById("stickynote");
 let pencilToolContainer = document.querySelector(".pencil-tool-container");
 let eraserToolContainer = document.querySelector(".eraser-tool-container");
-
 
 let optionFlag = true;
 let pencilToolFlag=false;
 let eraserToolFlag=false;
 
-// console.log(pencilToolContainer);
-// console.log(optionContainer);
 // optionFlag:  true->show toolbox false->hide toolbox
 optionContainer.addEventListener("click",(e)=>{
     optionFlag = !optionFlag;
@@ -20,6 +19,7 @@ optionContainer.addEventListener("click",(e)=>{
         openToolbox();
     }
     else{
+        toolBoxContainer.classList.add("shrink-tools");
         closeToolbox();
     }
 })
@@ -61,26 +61,45 @@ eraser.addEventListener("click",(e)=>{
     }
 })
 
-// eraserToolContainer.addEventListener("click",(e)=>{
+stickynote.addEventListener("click",(e)=>{
+    let stickyContainer = document.createElement("div");
+    stickyContainer.setAttribute("class","sticky-note-container");
+    stickyContainer.innerHTML = `
+        <div class="note-header-container">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="note-area-container">
+            <textarea></textarea>
+        </div>
+    `;
 
-// })
+    document.body.appendChild(stickyContainer);
+})
 
+function closeAll(){
+    pencilToolContainer.classList.remove("open-tool");
+    eraserToolContainer.classList.remove("open-tool");
+    pencilToolFlag=false;
+    eraserToolFlag=false;
+}
+    
 function openToolbox(){
+    // toolBoxContainer.classList.remove("shrink-tools");
     let iconElement = optionContainer.children[0];
-    console.log(iconElement);
     iconElement.classList.remove("fa-times");
     iconElement.classList.add("fa-bars");
     toolBoxContainer.style.display="flex";
-   // pencilToolContainer.style.display("none");
-    //eraserToolContainer.style.display("none");
+    closeAll();   
 }
+
 function closeToolbox(){
+    // toolBoxContainer.classList.remove("scale-tools");
     let iconElement = optionContainer.children[0];
-    console.log(iconElement);
     iconElement.classList.remove("fa-bars");
     iconElement.classList.add("fa-times");
     toolBoxContainer.style.display="none";
-   // pencilToolContainer.style.display("none");
-    //eraserToolContainer.style.display("none");
-
+    closeAll();
 }
+    
+    

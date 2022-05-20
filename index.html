@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./tools.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <title>Openboard</title>
 </head>
 <body>
     <div class="option-container">
         <i class="fa-solid fa-bars"></i>
     </div>
-    <div class="toolbox-container">
-        <img src="Icons/pencil.svg" alt="Pencil">
-        <img src="Icons/eraser.svg" alt="Eraser">
-        <img src="Icons/download.svg" alt="Download">
-        <img src="Icons/upload.svg" alt="Upload">
-        <img src="Icons/undo.svg" alt="Undo">
-        <img src="Icons/redo.svg" alt="Redo">
-        <img src="Icons/note.svg" alt="Sticky Note">
+    <div class="toolbox-container scale-tools">
+        <img id="pencil" src="Icons/pencil.svg" alt="Pencil">
+        <img id="eraser" src="Icons/eraser.svg"  alt="Eraser">
+        <img id="download" src="Icons/download.svg" alt="Download">
+        <img id="upload" src="Icons/upload.svg" alt="Upload">
+        <img id="undo" src="Icons/undo.svg" alt="Undo">
+        <img id="redo" src="Icons/redo.svg" alt="Redo">
+        <img id="stickynote" src="Icons/note.svg" alt="Sticky Note">
     </div>
     <div class="pencil-tool-container">
         <div class="pencil-width-container">
@@ -33,5 +33,14 @@
             <div class="green pencil-color"></div>
         </div>
     </div>
+
+    <div class="eraser-tool-container">
+        <div class="eraser-width-container">
+            <input type="range" min="1" max="10" value="2">
+        </div>
+    </div>
+
+    
+    <script src="./tools.js"></script>
 </body>
 </html>
