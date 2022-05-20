@@ -62,28 +62,38 @@ eraser.addEventListener("click",(e)=>{
 })
 
 stickynote.addEventListener("click",(e)=>{
+    closeAll();
     let stickyContainer = document.createElement("div");
     stickyContainer.setAttribute("class","sticky-note-container");
     stickyContainer.innerHTML = `
-        <div class="note-header-container">
-            <div class="minimize"></div>
-            <div class="remove"></div>
+        <div class = "sticky-header-wrapper">
+            <div class = "dragspace"></div>
+            <div class="note-action-container">
+                <div class="minimize"></div>
+                <div class="remove"></div>
+            </div>
         </div>
         <div class="note-area-container">
             <textarea></textarea>
         </div>
     `;
-
     document.body.appendChild(stickyContainer);
+    let dragspace = stickyContainer.querySelector(".dragspace");
+    let minimize = stickyContainer.querySelector(".minimize");
+    let remove = stickyContainer.querySelector(".remove");
 
-    stickyContainer.onmousedown = function(event) {
+    console.log(minimize);
+    console.log(remove);
+    console.log(stickyContainer);
+    noteActions(stickyContainer,minimize,remove);
+
+    dragspace.onmousedown = function(event) {
         dragAndDrop(stickyContainer,event);
     };
       
-    stickyContainer.ondragstart = function() {
+    dragspace.ondragstart = function() {
         return false;
     };
-
 
 })
 
@@ -143,4 +153,22 @@ function dragAndDrop(element, event){
       document.removeEventListener('mousemove', onMouseMove);
       element.onmouseup = null;
     };
+}
+
+function noteActions(stickyContainer, minimize, remove){
+    remove.addEventListener("click",(e)=>{
+        stickyContainer.remove();
+    })
+    minimize.addEventListener("click",(e)=>{
+        let noteTextAreaContainer = stickyContainer.querySelector(".note-area-container");
+        let displayProperty = getComputedStyle(noteTextAreaContainer).getPropertyValue("display");
+        if(displayProperty === "none"){
+            noteTextAreaContainer.style.display = "block";
+            stickyContainer.classList.remove("boxshadow-none");
+        }
+        else{
+            noteTextAreaContainer.style.display = "none";
+            stickyContainer.classList.add("boxshadow-none");
+        }
+    })
 }
