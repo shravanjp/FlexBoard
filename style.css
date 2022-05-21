@@ -165,8 +165,8 @@ body{
 }
 
 .sticky-note-container{
-    height: 12rem;
-    width: 14rem;
+    height: 24rem;
+    width: 18rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: absolute;
     top: 15rem;
@@ -220,4 +220,9 @@ textarea{
  
 .dragspace{
     width: 80%;
+}
+
+img{
+    height: 100%;
+    width: 100%;
 }

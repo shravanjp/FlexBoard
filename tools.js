@@ -5,6 +5,7 @@ let bodyContainer = document.getElementsByTagName("body")[0];
 let pencil = document.getElementById("pencil");
 let eraser = document.getElementById("eraser");
 let stickynote = document.getElementById("stickynote");
+let upload = document.getElementById("upload");
 let pencilToolContainer = document.querySelector(".pencil-tool-container");
 let eraserToolContainer = document.querySelector(".eraser-tool-container");
 
@@ -82,9 +83,7 @@ stickynote.addEventListener("click",(e)=>{
     let minimize = stickyContainer.querySelector(".minimize");
     let remove = stickyContainer.querySelector(".remove");
 
-    console.log(minimize);
-    console.log(remove);
-    console.log(stickyContainer);
+    
     noteActions(stickyContainer,minimize,remove);
 
     dragspace.onmousedown = function(event) {
@@ -97,6 +96,48 @@ stickynote.addEventListener("click",(e)=>{
 
 })
 
+upload.addEventListener("click",(e)=>{
+    let input = document.createElement("input");
+    input.setAttribute("type","file");
+    input.click();
+
+    input.addEventListener("change",(e)=>{
+        let file = input.files[0];
+        let url = URL.createObjectURL(file);
+
+        closeAll();
+        let stickyContainer = document.createElement("div");
+        stickyContainer.setAttribute("class","sticky-note-container");
+        stickyContainer.innerHTML = `
+            <div class = "sticky-header-wrapper">
+                <div class = "dragspace"></div>
+                <div class="note-action-container">
+                    <div class="minimize"></div>
+                    <div class="remove"></div>
+                </div>
+            </div>
+            <div class="note-area-container">
+                <img src="${url}"/>
+            </div>
+        `;
+        document.body.appendChild(stickyContainer);
+        let dragspace = stickyContainer.querySelector(".dragspace");
+        let minimize = stickyContainer.querySelector(".minimize");
+        let remove = stickyContainer.querySelector(".remove");
+
+    
+        noteActions(stickyContainer,minimize,remove);
+
+        dragspace.onmousedown = function(event) {
+            dragAndDrop(stickyContainer,event);
+        };
+      
+        dragspace.ondragstart = function() {
+            return false;
+        };
+
+    })
+})
 
 function closeAll(){
     pencilToolContainer.classList.remove("open-tool");
