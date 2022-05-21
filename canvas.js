@@ -1,4 +1,5 @@
 let canvas = document.querySelector("canvas");
+let download = document.getElementById("download");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -65,6 +66,7 @@ eraserWidthElem.addEventListener("change",(e)=>{
     tool.lineWidth = eraserWidth;
 })
 
+
 //  "eraser" and "eraserToolFlag" from tool.js
 eraser.addEventListener("click",(e)=>{
     if(eraserToolFlag){
@@ -75,4 +77,12 @@ eraser.addEventListener("click",(e)=>{
         tool.strokeStyle = pencilColor;
         tool.lineWidth = pencilWidth;
     }
+})
+
+download.addEventListener("click",(e)=>{
+    let url = canvas.toDataURL();
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "board.jpg";
+    a.click();
 })
