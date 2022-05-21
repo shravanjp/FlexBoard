@@ -9,11 +9,11 @@ let upload = document.getElementById("upload");
 let pencilToolContainer = document.querySelector(".pencil-tool-container");
 let eraserToolContainer = document.querySelector(".eraser-tool-container");
 
-let optionFlag = true;
-let pencilToolFlag=false;
-let eraserToolFlag=false;
+let optionFlag = true;         // optionFlag:  true->show toolbox false->hide toolbox
+let pencilToolFlag=false;      // pencilToolFlag: true->show pencil toolbox false->hide
+let eraserToolFlag=false;      // eraserToolFlag: true->show eraser toolbox false->hide
 
-// optionFlag:  true->show toolbox false->hide toolbox
+
 optionContainer.addEventListener("click",(e)=>{
     optionFlag = !optionFlag;
     if(optionFlag){
@@ -25,7 +25,6 @@ optionContainer.addEventListener("click",(e)=>{
     }
 })
 
-//pencilToolFlag: true->show false->hide
 pencil.addEventListener("click",(e)=>{
     pencilToolFlag = ! pencilToolFlag;
     if(pencilToolFlag){
