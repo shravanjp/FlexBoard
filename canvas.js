@@ -25,21 +25,27 @@ tool.strokeStyle = pencilColor;
 tool.lineWidth = pencilWidth;
 
 canvas.addEventListener("mousedown",(e)=>{
-    tool.strokeStyle = (eraserToolFlag) ? eraserColor : pencilColor;
-    tool.lineWidth = (eraserToolFlag)? eraserWidth : pencilWidth;
+    // tool.strokeStyle = (eraserToolFlag) ? eraserColor : pencilColor;
+    // tool.lineWidth = (eraserToolFlag)? eraserWidth : pencilWidth;
     mouseDown = true;
-    beginPath({
-        x : e.clientX,
-        y : e.clientY
-    });
+    
+    let data = {
+                x : e.clientX,
+                y : e.clientY,
+                
+             }
+    // beginPath(data);
+    socket.emit("beginPath",data);
 })
 
 canvas.addEventListener("mousemove",(e)=>{
     if(mouseDown){ 
-        drawStroke({
+        let data = {
             x : e.clientX,
             y : e.clientY
-        });
+        }
+        // drawStroke(data);
+        socket.emit("drawStroke",data);
     }
 })
 
@@ -67,26 +73,44 @@ pencilColorElems.forEach((pencilColorElem) => {
     pencilColorElem.addEventListener("click",(e)=>{
         pencilColor = pencilColorElem.classList[0];
         tool.strokeStyle = pencilColor;
+        strokeObj={
+            strokeColor : pencilColor,
+            strokeWidth : pencilWidth
+        }
+        socket.emit("changeColorNWidth",strokeObj);
     })
 })
 
 pencilWidthElem.addEventListener("change",(e)=>{
     pencilWidth = pencilWidthElem.value;
     tool.lineWidth = pencilWidth;
+    strokeObj={
+        strokeColor : pencilColor,
+        strokeWidth : pencilWidth
+    }
+    socket.emit("changeColorNWidth",strokeObj);
 })
 
 eraserWidthElem.addEventListener("change",(e)=>{
     eraserWidth = eraserWidthElem.value;
     tool.lineWidth = eraserWidth;
+    strokeObj={
+        strokeColor : eraserColor,
+        strokeWidth : eraserWidth
+    }
+    socket.emit("changeColorNWidth",strokeObj);
 })
 
 
 //  "eraser" and "eraserToolFlag" from tool.js
 eraser.addEventListener("click",(e)=>{
-
         tool.strokeStyle = eraserColor;
         tool.lineWidth = eraserWidth;
-   
+        strokeObj={
+            strokeColor : eraserColor,
+            strokeWidth : eraserWidth
+        }
+        socket.emit("changeColorNWidth",strokeObj);
 })
 
 download.addEventListener("click",(e)=>{
@@ -105,10 +129,8 @@ undo.addEventListener("click",(e)=>{
             trackerValue : tracker,
             undoRedoTracker
         };
-
-        undoRedoCanvas(trackerObj);
-    
-    
+        // undoRedoCanvas(trackerObj);
+    socket.emit("undoRedoCanvas",trackerObj);
 })
 
 redo.addEventListener("click", (e)=> {
@@ -119,8 +141,8 @@ redo.addEventListener("click", (e)=> {
             trackerValue : tracker,
             undoRedoTracker
         };
-        undoRedoCanvas(trackerObj);
-    
+        // undoRedoCanvas(trackerObj);
+        socket.emit("undoRedoCanvas",trackerObj);
     
 })
 
@@ -132,7 +154,38 @@ function undoRedoCanvas(trackerObj){
     let img = new Image();
     img.src = url;
     img.onload = () => {
-        // console.log("inside onload")
         tool.drawImage(img,0,0,);
     }
 }
+
+
+
+function changeColorNWidth(strokeObj){
+    tool.strokeStyle = strokeObj.strokeColor;
+    tool.lineWidth = strokeObj.strokeWidth;
+}
+
+socket.on("beginPath",(data) =>{
+    //data from the server
+    beginPath(data);
+})
+
+socket.on("drawStroke",(data)=>{
+    drawStroke(data);
+})
+
+socket.on("undoRedoCanvas",(data)=>{
+    undoRedoCanvas(data);
+})
+
+socket.on("changeColorNWidth",(data)=>{
+    changeColorNWidth(data);
+})
+
+// socket.on("changeWidth",(data)=>{
+//     changeWidth(data);
+// })
+
+// socket.on("changeWidthNColor",(data)=>{
+//     changeWidthNColor(data);
+// })
