@@ -18,9 +18,9 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 
 <table style:border-collapse:collapse>
     <tr>
-    <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="400" height="300"></td>
-     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="400" height="300"></td>
-     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="400" height="300"></td>
+    <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="600" height="500"></td>
+     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="600" height="500"></td>
+     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="600" height="500"></td>
     </tr>
  </table>
 
@@ -32,6 +32,8 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 - Side Note
 - Upload (you can upload the picture for your reference eg: while teaching )
 - Undo-Redo
+
+<img src="https://visitor-badge.glitch.me/badge?page_id=MarkDown&left_color=green&right_color=red"/>
 
 ## How to use the App
 
