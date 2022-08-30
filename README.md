@@ -11,9 +11,9 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 **Server:** Node, Express, Socket.io
 
 
-## Demo
+## Screenshots
 
-Insert gif or link to demo
+![Home Page ]<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="400" height="790">
 
 
 ## Features
@@ -23,10 +23,6 @@ Insert gif or link to demo
 - Side Note
 - Upload (you can upload the picture for your reference eg: while teaching )
 - Undo-Redo
-
-## Badges
-
-![GitHub last commit](https://img.shields.io/github/last-commit/shravanjp/Flexboard) ![GitHub repo size](https://img.shields.io/github/repo-size/shravanjp/Flexboard) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
 ## 🔗 Links
