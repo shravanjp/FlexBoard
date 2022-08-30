@@ -30,6 +30,15 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 - Upload (you can upload the picture for your reference eg: while teaching )
 - Undo-Redo
 
+## How to use the App
+
+share this link with the other user
+```
+https://flex-board.herokuapp.com/
+
+```
+That's it :)
+
 
 ## 🔗 Links
 
