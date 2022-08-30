@@ -15,9 +15,9 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 
 <table style:border-collapse:collapse>
     <tr>
-    <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="300" height="240"></td>
-     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="300" height="240"></td>
-     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="300" height="240"></td>
+    <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="400" height="300"></td>
+     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="400" height="300"></td>
+     <td><img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="400" height="300"></td>
     </tr>
  </table>
 
@@ -35,7 +35,6 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 share this link with the other user
 ```
 https://flex-board.herokuapp.com/
-
 ```
 That's it :)
 
