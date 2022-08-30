@@ -2,6 +2,7 @@
 # Flexboard
 
 Flexboard is an realtime drawing app. You can share this app's link with others and can draw and it will reflect in other users who have opened this app's link. It also has a features like download the picture you have drawn, undo-redo, side note. You can also upload the picture for your reference(eg: while teaching to someone).
+![GitHub last commit](https://img.shields.io/github/last-commit/shravanjp/Flexboard) ![GitHub repo size](https://img.shields.io/github/repo-size/shravanjp/Flexboard) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
 ## Tech Stack
