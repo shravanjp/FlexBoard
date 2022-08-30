@@ -13,12 +13,14 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 
 **Server:** Node, Express, Socket.io
 
+![visitor badge](https://visitor-badge.glitch.me/badge?page_id=Flexboard.visitor-badge)
+
 
 ## Screenshots
 
-<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="600" height="500">
-<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="600" height="500">
-<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="600" height="500">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="800" height="500" class="center">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="800" height="500" class="center">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="800" height="500" class="center">
 
 
 ## Features
@@ -29,7 +31,7 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 - Upload (you can upload the picture for your reference eg: while teaching )
 - Undo-Redo
 
-![visitor badge](https://visitor-badge.glitch.me/badge?page_id=Flexboard.visitor-badge)
+
 
 ## How to use the App
 
