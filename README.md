@@ -13,9 +13,9 @@ Flexboard is an realtime drawing app. You can share this app's link with others 
 
 ## Screenshots
 
-![Home Page ]<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="270" height="200">
-![Upload ]<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="270" height="200">
-![SideNote ]<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="270" height="200">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/homepage.png" width="270" height="200">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/upload.png" width="270" height="200">
+<img src="https://github.com/shravanjp/FlexBoard/blob/main/assets/sidenote.png" width="270" height="200">
 
 
 ## Features
