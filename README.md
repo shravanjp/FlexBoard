@@ -26,11 +26,7 @@ Insert gif or link to demo
 
 ## Badges
 
-![GitHub last commit](https://img.shields.io/github/last-commit/shravanjp/Flexboard)
-
-![GitHub repo size](https://img.shields.io/github/repo-size/shravanjp/Flexboard)
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+![GitHub last commit](https://img.shields.io/github/last-commit/shravanjp/Flexboard) ![GitHub repo size](https://img.shields.io/github/repo-size/shravanjp/Flexboard) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 
 ## 🔗 Links
