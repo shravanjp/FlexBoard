@@ -121,6 +121,19 @@ download.addEventListener("click",(e)=>{
     a.click();
 })
 
+
+function undoRedoCanvas(trackerObj){
+    tracker = trackerObj.trackerValue;
+    console.log("canvas "+tracker);
+    undoRedoTracker = trackerObj.undoRedoTracker;
+    let url = undoRedoTracker[tracker];
+    let img = new Image();
+    img.src = url;
+    img.onload = (e) => {
+        tool.drawImage(img,0,0,canvas.width,canvas.height);
+    }
+}
+
 undo.addEventListener("click",(e)=>{
     if(tracker > 0){
         tracker--;
@@ -146,17 +159,6 @@ redo.addEventListener("click", (e)=> {
     
 })
 
-function undoRedoCanvas(trackerObj){
-    tracker = trackerObj.trackerValue;
-    console.log("canvas "+tracker);
-    undoRedoTracker = trackerObj.undoRedoTracker;
-    let url = undoRedoTracker[tracker];
-    let img = new Image();
-    img.src = url;
-    img.onload = () => {
-        tool.drawImage(img,0,0,);
-    }
-}
 
 
 
